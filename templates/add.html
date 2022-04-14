@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+   <head>
+      <!-- Required meta tags -->
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <!-- Bootstrap CSS -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+      <title>Add User List</title>
+   </head>
+   <body>
+      <div class="container">
+         <ul class="nav">
+            <li class="nav-item">
+               <a class="nav-link " href="{{url_for('index')}}">Home</a>
+            </li>
+            <li class="nav-item">
+               <a class="nav-link" href="{{url_for('add')}}">Add</a>
+            </li>
+            <li class="nav-item">
+               <a class="nav-link" href="{{url_for('delete')}}">Delete</a>
+            </li>
+            <li class="nav-item">
+               <a class="nav-link" href="{{url_for('update')}}">Update</a>
+            </li>
+         </ul>
+         <div class="jumbotron">
+            <h1 class="display-4">Add a User:</h1>
+            <p class="lead">You can add a new user here. </p>
+            <hr class="my-4">
+
+            <form method="POST">
+              {{ form.hidden_tag() }}
+               <div class="form-group">
+                   <!--<label >Name</label>-->
+                   {{form.name.label}}
+                  <!--<input type="text" class="form-control" > -->
+                  {{form.name(class_="form-control")}}
+               </div>
+               <div class="form-group">
+                  <!--<label >Phone number</label>-->
+                 {{form.phone.label}}
+                  <!--<input type="text" class="form-control" > -->
+                 {{form.phone(class_="form-control")}}
+               </div>
+               <!--<button type="submit" class="btn btn-primary">Submit</button>-->
+              {{form.submit(class_="btn btn-primary")}}
+            </form>
+
+         </div>
+      </div>
+   </body>
+</html>
